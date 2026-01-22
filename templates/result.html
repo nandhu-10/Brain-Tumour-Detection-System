@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .image-box {
+            margin: 10px;
+            text-align: center;
+        }
+        img {
+            max-width: 400px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brain Tumor Detection Result</h1>
+    <div class="container">
+        <div class="image-box">
+            <img src="{{ overlay_image }}" alt="Overlay Image">
+            <p>Tumor Overlay</p>
+        </div>
+        <div class="image-box">
+            <img src="{{ prediction_image }}" alt="Prediction Image">
+            <p>Prediction Map</p>
+        </div>
+    </div>
+    {% if tumor_detected %}
+        <p style="text-align: center;">Tumor Detected (Highlighted in Blue)</p>
+    {% else %}
+        <p style="text-align: center;">No Tumor Detected</p>
+    {% endif %}
+    <br>
+    <div style="text-align: center;"><a href="/">Go

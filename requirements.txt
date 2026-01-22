@@ -1,0 +1,7 @@
+Flask
+Pillow
+torch
+torchvision
+monai
+numpy
+matplotlib
